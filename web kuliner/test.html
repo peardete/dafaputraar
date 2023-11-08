@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id" translate="no" data-rh="lang,translate">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="boxicons/css/boxicons.min.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/tested.css" />
+    <link rel="website icon" href="EMERALD LOGO NO BG.png" />
+    <title>Emerald</title>
+    <link rel="stylesheet" href="assets/css/whatsapp-widget.css" />
+  </head>
+  <body>
+    <div class="video-container">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="background-clip"
+        id="video-bg"
+      >
+        <source src="assets/images/Restaurant.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="whatsapp-widget">
+      <a href="https://wa.me/6285807167248" target="_blank">
+        <img src="whatsapp-icon.png" alt="WhatsApp Icon" />
+        <span>SAY HELLO TO US!</span>
+      </a>
+    </div>
+
+    <div class="wrapper">
+      <nav class="nav">
+        <div class="nav-logo">
+          <img
+            src="assets/images/EMERALD TEXT NO BG.png"
+            alt="Company Logo"
+            width="60"
+            height="60"
+          />
+        </div>
+        <div class="nav-menu" id="navMenu">
+          <ul>
+            <li><a href="#" class="link active">Home</a></li>
+            <li><a href="#" class="link">Menu</a></li>
+            <li><a href="#" class="link">Contact</a></li>
+            <li><a href="#" class="link">About</a></li>
+            <li><a href="#" class="link" onclick="register()">Sign Up</a></li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <button class="btn white-btn" id="loginBtn" onclick="login()">
+            Sign In
+          </button>
+          <button class="btn" id="registerBtn" onclick="register()">
+            Sign Up
+          </button>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+    </div>
+
+    <script>
+      function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+
+        if (i.className === "nav-menu") {
+          i.className += " responsive";
+        } else {
+          i.className = "nav-menu";
+        }
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".link");
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute("href");
+
+            if (targetId !== "#") {
+              const targetElement = document.querySelector(targetId);
+
+              if (targetElement) {
+                const yOffset = -70; // Adjust the offset as needed
+                const y =
+                  targetElement.getBoundingClientRect().top +
+                  window.pageYOffset +
+                  yOffset;
+                window.scrollTo({ top: y, behavior: "smooth" });
+              }
+            } else {
+              // Handle special case, e.g., register button
+              register();
+            }
+          });
+        });
+      });
+    </script>
+    <!-- WhatsApp Chat Widget -->
+    <div
+      id="qlwapp"
+      class="qlwapp qlwapp-free qlwapp-button qlwapp-bottom-right qlwapp-all qlwapp-rounded"
+    >
+      <div class="qlwapp-container">
+        <a
+          class="qlwapp-toggle"
+          data-action="open"
+          data-phone="6285807167248"
+          data-message="Hello!"
+          role="button"
+          tabindex="0"
+          target="_blank"
+        >
+          <i class="qlwapp-icon qlwapp-whatsapp-icon"></i>
+          <i class="qlwapp-close" data-action="close">&times;</i>
+          <span class="qlwapp-text">SAY HELLO TO US</span>
+        </a>
+      </div>
+    </div>
+    <!-- WhatsApp Chat Widget JavaScript -->
+    <script type="text/javascript">
+      (function () {
+        var qlwapp = document.createElement("script");
+        qlwapp.type = "text/javascript";
+        qlwapp.async = true;
+        qlwapp.src = "https://cdn.qlwapp.com/qlwapp.min.js";
+        var firstScript = document.getElementsByTagName("script")[0];
+        firstScript.parentNode.insertBefore(qlwapp, firstScript);
+      })();
+    </script>
+  </body>
+</html>

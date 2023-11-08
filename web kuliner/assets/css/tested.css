@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #040d12;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110vh;
+  background: rgba(39, 39, 39, 0.4);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  background: linear-gradient(rgba(39, 39, 39, 0.6), transparent);
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.emerald-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.emerald-link:hover {
+  text-decoration: none;
+}
+
+.emerald-text {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+@keyframes forwardLean {
+  0% {
+    transform: translateY(0) rotateX(0);
+  }
+  100% {
+    transform: translateY(-2px) rotateX(10deg);
+  }
+}
+
+.nav-logo p {
+  margin: 0;
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.nav-logo img {
+  width: 250px;
+  height: 250px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.nav-menu ul {
+  display: flex;
+}
+
+.nav-menu ul li {
+  list-style-type: none;
+}
+
+.nav-menu ul li .link {
+  text-decoration: none;
+  font-weight: 500;
+  color: #fff;
+  padding-bottom: 15px;
+  margin: 0 25px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-menu ul li .link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ebc34e;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.nav-menu ul li .link:hover::before {
+  transform: scaleX(1);
+}
+
+.nav-menu ul li .link:hover {
+  color: #ebc34e;
+}
+
+.nav-button .btn {
+  width: 130px;
+  height: 40px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #ebc34e;
+}
+
+#registerBtn {
+  margin-left: 15px;
+}
+
+.btn.white-btn {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.btn.btn.white-btn:hover {
+  background: #ebc34e;
+}
+
+.nav-menu-btn {
+  display: none;
+}
